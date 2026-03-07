@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jquery</title>
+    <title>Ejercicio jQuery - Toggle</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-<body>
-   
-    <ul>beneficios de hacer deporte</ul>
-      <li>mejora tu condicion fisica</li>
-      <li>mejora tu salud</li>
-      <li>mejora tu aspecto fisico</li>
+<body style="padding: 20px; font-family: sans-serif;">
 
+    <h3>Beneficios de hacer deporte</h3>
+    <ul id="miLista">
+        <li>Mejora tu condición física</li>
+        <li>Mejora tu salud</li>
+        <li>Mejora tu aspecto físico</li>
+    </ul>
 
+    <button id="btnModificar">Ocultar Lista</button>
 
+    <script>
+        $(document).ready(function () {
+            
+            $('#btnModificar').click(function () {
+                
+                
+                $('#miLista').toggle();
 
-      
+                // 2. Cambiar el color de los elementos a azul (Punto 3)
+                $('#miLista li').css('color', 'red');
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+                
+                if ($('#miLista').is(':visible')) {
+                    $(this).text('Ocultar Lista');
+                } else {
+                    $(this).text('Mostrar Lista');
+                }
+            });
+            
+           
+            $('#miLista').append('<li style="color: red;">Mejora la salud mental</li>');
+        });
+    </script>
+
 </body>
 </html>
